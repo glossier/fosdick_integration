@@ -26,6 +26,7 @@ module Documents
             xml.ShipState(ship_state)
             xml.ShipZip(@shipment['shipping_address']['zipcode'])
             xml.ShipPhone(@shipment['shipping_address']['phone'])
+            xml.Email(@shipment['email'])
 
             # check if all Custom1 through Custom5
             # are present and include in the xml
