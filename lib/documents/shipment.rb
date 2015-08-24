@@ -27,6 +27,7 @@ module Documents
             xml.ShipZip(@shipment['shipping_address']['zipcode'])
             xml.ShipPhone(@shipment['shipping_address']['phone'])
             xml.Email(@shipment['email'])
+            xml.Code(@shipment['shipping_method_code'])
 
             # check if all Custom1 through Custom5
             # are present and include in the xml
