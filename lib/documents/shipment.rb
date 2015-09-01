@@ -25,11 +25,11 @@ module Documents
             xml.ShipCity(truncate_city)
 
             # Use "ShipStateOther" field for international orders
-            if (@shipment['shipping_address']['country'] !== 'US') {
+            if (@shipment['shipping_address']['country'] !== 'US') 
               xml.ShipStateOther(ship_state)
-            } else {
+            else
               xml.ShipState(ship_state)
-            }
+            end
 
             xml.ShipZip(@shipment['shipping_address']['zipcode'])
             xml.ShipPhone(@shipment['shipping_address']['phone'])
