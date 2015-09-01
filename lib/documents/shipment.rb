@@ -26,7 +26,6 @@ module Documents
 
             # Use "ShipStateOther" field for international orders
             if (@shipment['shipping_address']['country'] !== 'US') {
-              xml.ShipState('')
               xml.ShipStateOther(ship_state)
             } else {
               xml.ShipState(ship_state)
