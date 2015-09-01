@@ -23,7 +23,15 @@ module Documents
             xml.ShipAddress1(@shipment['shipping_address']['address1'])
             xml.ShipAddress2(@shipment['shipping_address']['address2'])
             xml.ShipCity(truncate_city)
-            xml.ShipState(ship_state)
+
+            # Use "ShipStateOther" field for international orders
+            if (@shipment['shipping_address']['country'] !== 'US') {
+              xml.ShipState('')
+              xml.ShipStateOther(ship_state)
+            } else {
+              xml.ShipState(ship_state)
+            }
+
             xml.ShipZip(@shipment['shipping_address']['zipcode'])
             xml.ShipPhone(@shipment['shipping_address']['phone'])
             xml.Email(@shipment['email'])
