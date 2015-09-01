@@ -25,7 +25,7 @@ module Documents
             xml.ShipCity(truncate_city)
 
             # Use "ShipStateOther" field for international orders
-            if (@shipment['shipping_address']['country'] !== 'US') 
+            if (@shipment['shipping_address']['country'] != 'US') 
               xml.ShipStateOther(ship_state)
             else
               xml.ShipState(ship_state)
