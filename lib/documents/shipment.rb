@@ -32,6 +32,7 @@ module Documents
             end
 
             xml.ShipZip(@shipment['shipping_address']['zipcode'])
+            xml.ShipCountry(@shipment['shipping_address']['country'])
             xml.ShipPhone(@shipment['shipping_address']['phone'])
             xml.Email(@shipment['email'])
             xml.Code(@shipment['shipping_method_code'])
